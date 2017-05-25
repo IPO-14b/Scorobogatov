@@ -55,3 +55,15 @@ function leos_stat(){
         this.pos=rndm(6);
         this.togo=rndm(20);
 }
+function leos_n(n){
+        for(m=0;m!=n;m++)
+                this[m]=new leos_stat();
+}
+var leocount=3;
+var leos=new leos_n(leocount);
+
+function exist(x,y,l){
+        for(n=0;n!=leocount;n++)
+                if((l[n].x==x)&&(l[n].y==y))return true;
+        return false;
+}
