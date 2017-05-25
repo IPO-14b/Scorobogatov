@@ -45,3 +45,13 @@ function leo_array(){
         }
         return;
 }
+if(!disable_ext)
+var leo=new leo_array();
+
+function leos_stat(){
+        this.x=rndm(5);
+        this.y=rndm(3);
+        this.direction=1;
+        this.pos=rndm(6);
+        this.togo=rndm(20);
+}
