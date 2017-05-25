@@ -28,3 +28,10 @@ function rndm(n) {
         rrr=((Math.round(dt.getTime()/10)+rrr)%n);
         return rrr;
 }
+function shotgun_array(){
+        for(n=0;n!=10;n++){
+                this[n]=new Image(200,130);
+                this[n].src="shotgun0"+n+".jpg";
+        }
+        return;
+}
