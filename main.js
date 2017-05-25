@@ -67,3 +67,39 @@ function exist(x,y,l){
                 if((l[n].x==x)&&(l[n].y==y))return true;
         return false;
 }
+function main_stream(){
+        for(m=0;m!=leocount;m++){
+                with (leos[m]){
+                        if(direction==0){
+                                pos++;
+                                if(pos>=18){
+                                        direction=-1;
+                                        pos=1;
+                                }
+                        }
+                        else{
+                                if((pos==0)&&(direction==-1)){
+                                        direction=1;
+                                        xx=rndm(5);
+                                        yy=rndm(3);
+                                        while(exist(xx,yy,leos)==true){
+                                                xx=rndm(5);
+                                                yy=rndm(3);
+                                        }
+                                        x=xx;
+                                        y=yy;
+                                        total++;
+                                        togo=rndm(20);
+                                }
+                                if((pos==8)&&(direction==1)){
+                                        direction=-1;
+                                        togo=5+rndm(10);
+                                }
+                                if(togo==0)pos+=direction;else togo--;
+                        }
+                document.images['pos'+y+x].src=leo[pos].src;
+                }
+        }
+        setTimeout('main_stream()',50);
+        return;
+}
