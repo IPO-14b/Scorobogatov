@@ -28,7 +28,7 @@ var ms_sux = false,
 
 /**
 *
-*
+* функция получения версии
 * @param s
 */
 function get_version(s) {
@@ -55,7 +55,7 @@ if ((navigator.appName == "Netscape") && (get_version(navigator.appVersion) < 3)
 
 /**
 *
-*
+* функция получения даты игры
 * @param n
 */
 function rndm(n) {
@@ -67,7 +67,7 @@ function rndm(n) {
 
 /**
 *
-*
+*функция отрисовки ружья
 * 
 */
 function shotgun_array() {
@@ -134,7 +134,7 @@ var leos = new leos_n(leocount);
 
 /**
 *
-*
+* функция окончания игры
 * @param x
 * @param y
 * @param l
@@ -244,7 +244,7 @@ function kill_em(s) {
 
 /**
 *
-* Функция 
+* Функция отсчета времени
 * 
 */
 function set_time_left() {
@@ -260,7 +260,7 @@ function set_time_left() {
 
 /**
 *
-* Функция 
+* Функция загрузки и ожидания игры
 * 
 */
 function loading_sequence() {
