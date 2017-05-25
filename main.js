@@ -35,3 +35,13 @@ function shotgun_array(){
         }
         return;
 }
+if(!disable_ext)
+var shotgun=new shotgun_array();
+
+function leo_array(){
+        for(n=0;n!=18;n++){
+                this[n]=new Image(100,75);
+                this[n].src="l"+n+".jpg";
+        }
+        return;
+}
