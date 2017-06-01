@@ -24,7 +24,6 @@
     <para>   x, y, this.width, this.height)</para>
     <para>  x += step; }</para>
     <para>}</para>
-  </abstract>
   <abstract>
     <title>Пример 2: Обновление картины</title>
     <para>Функция позволяет обновлять положения переднего плана, мешени и ружья</para>
