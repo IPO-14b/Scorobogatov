@@ -15,6 +15,7 @@
 *
 */
 
+
 var ms_sux = false,
     disable_ext = false,
     killed = 0,
@@ -79,6 +80,10 @@ function shotgun_array() {
 }
 
 if (!disable_ext) {
+    /**
+    * Массив выстрела
+    * @var object shotgun
+    */
     var shotgun = new shotgun_array();
 }
 
@@ -95,6 +100,10 @@ function leo_array() {
 }
 
 if (!disable_ext) {
+     /**
+    * Массив Леонардо
+    * @var object leo
+    */
     var leo = new leo_array();
 }
 
@@ -113,7 +122,7 @@ function leos_stat() {
 
 /**
 *
-*
+* Расположение Леонардо
 * @param n
 */
 
@@ -123,8 +132,9 @@ function leos_n(n) {
 }
 
 /**
-*
+* Кол-во одновременное появление Леонардо 
 * @var int leocount
+* Лицо Леонардо
 * @var object leos
 *
 */
@@ -134,9 +144,10 @@ var leos = new leos_n(leocount);
 
 /**
 *
-* функция окончания игры
+* Функция местоположения Леонардо
 * @param x
 * @param y
+* Результат
 * @param l
 */
 function exist(x, y, l) {
@@ -192,7 +203,7 @@ function main_stream() {
 }
 
 /**
-*
+* Анимация перезаряда
 * @var nc int
 */
 var nc = 0;
@@ -273,7 +284,7 @@ function loading_sequence() {
 
 
 if (!disable_ext) {
-    with(document) {
+    with (document) {
         writeln("<div align=center><a name='v6'>Стрелялка</a>");
         writeln('<table border=0 cellpadding=0 cellspacing=0>');
         for (y = 0; y != 3; y++) {
@@ -301,11 +312,13 @@ if (!disable_ext) {
         writeln('</td></tr></table></div>');
     }
 } else {
-    if(ms_sux) {
+    if (ms_sux) {
         document.write("<center><hr><h1>Error!</h1><p aling=left></p></center>Urgh! <b>Microsoft Internet Explorer found!</b>Why do you still use this f#cking piece of shit? This stupid browser don't support some extra features (even JavaScript), needed for this game! This site best viewed with <a href='http://www.netscape.com'>Netscape</a> 3.0 or any later version of this really cool browser! And remember Micros0ft is <b>evil and will be destroyed</b>!</p><center><p><a href='http://www.netscape.com/donwload'>Download Netscape now!</a></p><hr></center>");
     } else {
         document.write("<center><h1 align=center>Error!</h1><p aling=left>We're sorry, but your browser don't support some extra features, needed for this page! This site best viewed with Netscape 3.0 or any later version of this really cool browser! And remember Micros0ft - <b>SUX</b>!</p><center><a href='http://www.netscape.com/donwload'>Download Netscape now!</a></center>");
     }
 }
 
-if(!disable_ext)setTimeout("loading_sequence()",1000);
+if (!disable_ext) {
+    setTimeout("loading_sequence()",1000);
+}
