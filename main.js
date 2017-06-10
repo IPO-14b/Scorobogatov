@@ -31,6 +31,7 @@ var ms_sux = false,
 *
 * функция получения версии
 * @param s
+*
 */
 function get_version(s) {
     result = "";
@@ -44,20 +45,12 @@ function get_version(s) {
     return result;
 }
 
-if ((navigator.appName == "Microsoft Internet Explorer") && (get_version(navigator.appVersion) < 4)) {
-    disable_ext = true;
-    ms_sux = true;
-}
-
-if ((navigator.appName == "Netscape") && (get_version(navigator.appVersion) < 3)) {
-    disable_ext = true;
-}
-
 
 /**
 *
-* функция получения даты игры
+* Функция получения даты игры
 * @param n
+*
 */
 function rndm(n) {
     dt = new Date();
@@ -68,7 +61,7 @@ function rndm(n) {
 
 /**
 *
-*функция отрисовки ружья
+* Функция отрисовки ружья
 * 
 */
 function shotgun_array() {
@@ -81,8 +74,10 @@ function shotgun_array() {
 
 if (!disable_ext) {
     /**
+    *
     * Массив выстрела
     * @var object shotgun
+    *
     */
     var shotgun = new shotgun_array();
 }
@@ -90,6 +85,8 @@ if (!disable_ext) {
 /**
 *
 * Массив картинок
+* Загрузка картинок из папки
+*
 */
 function leo_array() {
     for (n = 0; n != 18; n++) {
@@ -100,9 +97,11 @@ function leo_array() {
 }
 
 if (!disable_ext) {
-     /**
+    /**
+    *
     * Массив Леонардо
     * @var object leo
+    *
     */
     var leo = new leo_array();
 }
@@ -110,7 +109,8 @@ if (!disable_ext) {
 /**
 *
 * Начальные значения для игры
-* 
+* Появление leo по x и y
+*
 */
 function leos_stat() {
     this.x = rndm(5);
@@ -124,6 +124,7 @@ function leos_stat() {
 *
 * Расположение Леонардо
 * @param n
+*
 */
 
 function leos_n(n) {
@@ -132,6 +133,7 @@ function leos_n(n) {
 }
 
 /**
+*
 * Кол-во одновременное появление Леонардо 
 * @var int leocount
 * Лицо Леонардо
@@ -149,6 +151,7 @@ var leos = new leos_n(leocount);
 * @param y
 * Результат
 * @param l
+*
 */
 function exist(x, y, l) {
     for(n=0;n!=leocount;n++) {
@@ -160,7 +163,9 @@ function exist(x, y, l) {
 
 /**
 *
-* Запуск игры
+* (main)
+* Реализация игры "Стрелялка"
+*
 */
 function main_stream() {
     for (m = 0; m != leocount; m++) {
@@ -203,14 +208,17 @@ function main_stream() {
 }
 
 /**
+*
 * Анимация перезаряда
 * @var nc int
+*
 */
 var nc = 0;
 
 /**
 *
 * Функция выстрела
+*
 */
 function shoot_em() {
     if (nc == 10) {
@@ -228,6 +236,7 @@ function shoot_em() {
 *
 * Функция убийства
 * @param s
+*
 */
 function kill_em(s) {
     if(!lets_start) {
@@ -277,6 +286,12 @@ function set_time_left() {
 function loading_sequence() {
     document.statistic.bodycount.value = "0";
     lets_start = true;
+    
+    /**
+    *
+    * Главный поток игры
+    *
+    */
     main_stream();
     set_time_left();
 }
@@ -310,12 +325,6 @@ if (!disable_ext) {
         writeln('<td><input type="text" readonly name="timeleft" size=7 value=""</td></tr>');
         writeln('</table></form>');
         writeln('</td></tr></table></div>');
-    }
-} else {
-    if (ms_sux) {
-        document.write("<center><hr><h1>Error!</h1><p aling=left></p></center>Urgh! <b>Microsoft Internet Explorer found!</b>Why do you still use this f#cking piece of shit? This stupid browser don't support some extra features (even JavaScript), needed for this game! This site best viewed with <a href='http://www.netscape.com'>Netscape</a> 3.0 or any later version of this really cool browser! And remember Micros0ft is <b>evil and will be destroyed</b>!</p><center><p><a href='http://www.netscape.com/donwload'>Download Netscape now!</a></p><hr></center>");
-    } else {
-        document.write("<center><h1 align=center>Error!</h1><p aling=left>We're sorry, but your browser don't support some extra features, needed for this page! This site best viewed with Netscape 3.0 or any later version of this really cool browser! And remember Micros0ft - <b>SUX</b>!</p><center><a href='http://www.netscape.com/donwload'>Download Netscape now!</a></center>");
     }
 }
 
